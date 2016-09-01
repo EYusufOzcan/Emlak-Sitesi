@@ -1,0 +1,132 @@
+﻿@model StajProje3.Models.OnayBekleyen
+
+@{
+    ViewBag.Title = "Onayla";
+}
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+        @Html.HiddenFor(model => model.ID)
+
+    <div class="sutun23">
+    <div class="editor-label">
+            İlan Başlığı:
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.IlanBasligi, new { @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.IlanBasligi)
+        </div>
+
+            <div class="editor-label">
+            Konut Tipi:
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.KonutTipi, new { @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.KonutTipi)
+        </div>
+
+        <div class="editor-label">
+            Konut Şekli:
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.KonutSekli, new { @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.KonutSekli)
+        </div>
+    
+        <div class="editor-label">
+            Bina Yaşı: 
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.BinaYasi, new { @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.BinaYasi)
+        </div>
+
+        <div class="editor-label">
+            Oda Sayısı:
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.OdaSayisi, new { @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.OdaSayisi)
+        </div>
+
+        <div class="editor-label">
+            Resim:
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Resim, new { @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.Resim)
+        </div>    
+
+        <div class="editor-label">
+            Metrekare:
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.mKare, new { @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.mKare)
+        </div>
+    </div>
+      
+    <div class="sutun21">
+        <div class="editor-label">
+            İl:
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Il, new { @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.Il)
+        </div>
+
+        <div class="editor-label">
+            İlçe:
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Ilce, new { @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.Ilce)
+        </div>
+
+        <div class="editor-label">
+            Semt:
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Semt, new { @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.Semt)
+        </div>
+
+        <div class="editor-label">
+            Fiyat:
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Fiyat, new { @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.Fiyat)
+        </div>
+
+        <div class="editor-label">
+            Özellikler:
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Aciklama, new { @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.Aciklama)
+        </div>
+
+        <div class="editor-label">
+            Kullanıcı:
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Kullanici, new { @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.Kullanici)
+        </div>
+
+        <p>
+            <input type="submit" value="Onayla" />
+        </p>
+        <div>
+    @Html.ActionLink("Önerilere Geri Dön", "Show")
+</div>
+        </div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

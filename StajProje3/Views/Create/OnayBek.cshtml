@@ -1,0 +1,147 @@
+﻿@model StajProje3.Models.OnayBekleyen
+
+@{
+    ViewBag.Title = "Kullanıcı Ekran";
+}
+
+@{
+    ViewBag.Title = "İlan Ekleme";
+}
+
+<div class="sutun1">
+<h2>Kullanıcı Ekranı</h2>
+    </div>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+@using (Html.BeginForm("OnayBek", "Create", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+
+    <script src="jquery.js" type="text/javascript"></script>
+<script src="jquery.maskedinput.js" type="text/javascript"></script>
+
+   <div class="sutun2">
+        <div class="editor-label">
+            İlan Başlığı:
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IlanBasligi)
+            @Html.ValidationMessageFor(model => model.IlanBasligi)
+        </div>
+
+        <div class="editor-label">
+            Konut Tipi:
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.KonutTipi)
+            @Html.ValidationMessageFor(model => model.KonutTipi)
+        </div>
+
+        <div class="editor-label">
+            Konut Şekli:
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.KonutSekli)
+            @Html.ValidationMessageFor(model => model.KonutSekli)
+        </div>
+
+        <div class="editor-label">
+            Bina Yaşı:
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BinaYasi)
+            @Html.ValidationMessageFor(model => model.BinaYasi)
+        </div>
+
+        <div class="editor-label">
+            Oda Sayısı:
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OdaSayisi)
+            @Html.ValidationMessageFor(model => model.OdaSayisi)
+        </div>
+       <div class="editor-label">
+            Resim:
+           </div>
+       <div>
+       <input type="file" name="file" class="button" />
+           @Html.ValidationMessageFor(model => model.Resim)
+        </div>
+        </div>
+
+    <div class="sutun3">
+        <div class="editor-label">
+            Metrekare:
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.mKare)
+            @Html.ValidationMessageFor(model => model.mKare)
+        </div>
+
+        <div class="editor-label">
+            İl:
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Il)
+            @Html.ValidationMessageFor(model => model.Il)
+        </div>
+
+        <div class="editor-label">
+            İlçe:
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Ilce)
+            @Html.ValidationMessageFor(model => model.Ilce)
+        </div>
+
+        <div class="editor-label">
+            Semt:
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Semt)
+            @Html.ValidationMessageFor(model => model.Semt)
+        </div>
+
+        <div class="editor-label">
+            Fiyat:
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Fiyat)
+            @Html.ValidationMessageFor(model => model.Fiyat)
+            </div>
+
+        <div class="editor-label">
+            Açıklama:
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Aciklama)
+            @Html.ValidationMessageFor(model => model.Aciklama)
+        </div>
+           @if(null!=TempData["alertMessage"])
+        {
+         <script type="text/javascript">
+             alert("@TempData["alertMessage"]");
+         </script>
+        }
+        </div>
+
+  
+
+       <div class="sutun4">
+        <p>
+            <input type="submit" value="Ekle" />
+        </p>
+               </div>
+    
+   
+}
+<div class="sutun12">
+<div>
+   @Html.ActionLink("Kayıtları Gör", "Show1") || @Html.ActionLink("Çıkış Yap", "List") 
+</div>
+    </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,63 @@
+﻿@{
+    var grid = new WebGrid(source: Model, canPage: true, rowsPerPage: 7);
+    grid.Pager(WebGridPagerModes.All);
+}
+
+@{
+    ViewBag.Title = "Evlerimiz";
+}
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+<div id="content">   
+@using (Html.BeginForm("List", "Create", FormMethod.Post))
+{
+   <div class="sutun15">
+    <form method="get">
+        <label>İlan Başlığı/ Konut Tipi/ Konut Şekli/ İl/ İlçe:&nbsp</label>
+        <input type="search" name="srch" />
+        <input type="submit" value="Ara" formaction="/Create/List"/>
+        <label>&nbsp&nbsp&nbsp&nbsp Fiyat Aralığı:&nbsp</label>
+        <input type="number" name="number1" min="1" max="number2" placeholder="Alt Sınır"/>
+        <input type="number" name="number2" min="1" placeholder="Üst Sınır"/>
+        <input type="submit" value="Ara" formaction="/Create/List"/>   
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp          
+        @Html.ActionLink("Giriş Yap", "Login") 
+        &nbsp||&nbsp
+        @Html.ActionLink("Kayıt Ol", "User")
+        @if(null!=TempData["alertMessage"])
+        {
+         <script type="text/javascript">
+             alert("@TempData["alertMessage"]");
+         </script>
+        }
+    </form>
+    </div>
+    <br />
+
+    @grid.GetHtml(
+    tableStyle:"webgrid-table",
+    headerStyle:"webgrid-header",
+    footerStyle:"webgridfooter",
+    alternatingRowStyle:"webgrid-alternating-row",
+    rowStyle:"webgrid-row-style",
+    columns: grid.Columns(
+    grid.Column(header:"Resim", format:@<img src="~/Dosyalar/@item.Resim" style= "width:100px; height:100px;" />    ),
+    grid.Column(columnName:"IlanBasligi", header: "İlan Başlığı"),
+    grid.Column(columnName:"KonutTipi", header:"Konut Tipi"),
+    grid.Column(columnName:"KonutSekli", header:"Konut Şekli"),
+    grid.Column(columnName:"BinaYasi", header:"Bina Yaşı"),
+    grid.Column(columnName:"OdaSayisi", header:"Oda Sayısı"),
+    grid.Column(columnName:"mKare", header:"Metrekare"),
+    grid.Column(columnName:"Il", header:"İl"),
+    grid.Column(columnName:"Ilce", header:"İlçe"),
+    grid.Column(columnName:"Semt", header:"Semt"),
+    grid.Column(columnName:"Fiyat", header:"Fiyat"),
+    grid.Column(columnName:"Aciklama", header:"Açıklama"),
+    grid.Column(format: @<text> @Html.ActionLink("Görüntüle", "Detay", new { id = item.ID }) </text>)
+                                                                                      
+    ))               
+}
+
+        </div>

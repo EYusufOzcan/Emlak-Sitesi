@@ -1,0 +1,66 @@
+﻿@model StajProje3.Models.Kullanıcılar
+
+@{
+    ViewBag.Title = "User";
+}
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <div class="sutun20">
+        <div class="editor-label">
+            Kullanıcı Ad:
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.KullanıcıAd)
+            @Html.ValidationMessageFor(model => model.KullanıcıAd)
+        </div>
+
+        <div class="editor-label">
+            Şifre:
+        </div>
+        <div class="editor-field">
+            @Html.Password("Sifre") 
+            @Html.ValidationMessageFor(model => model.Sifre)
+        </div>
+
+        <div class="editor-label">
+            Ad:
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Ad, new { required = "required" })
+            @Html.ValidationMessageFor(model => model.Ad)
+        </div>
+
+        <div class="editor-label">
+            Soyad:
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Soyad, new { required = "required" })
+            @Html.ValidationMessageFor(model => model.Soyad)
+        </div>
+
+        <div class="editor-label"> 
+         Email:
+           </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email, new { required = "required" })
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>  
+        <br />   
+        <div>
+           &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+             <input type="submit" value="Kaydet" name="kaydet" />
+        </div>
+        <br /> 
+         <div>
+          &nbsp&nbsp @Html.ActionLink("Anasayfaya Geri Dön", "List")
+       </div>
+      </div>
+    
+        
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

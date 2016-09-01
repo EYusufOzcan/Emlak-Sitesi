@@ -1,0 +1,223 @@
+﻿body {
+    font-size: .85em;
+    font-family: "Arial";
+    color: #232323;
+}
+
+header, footer, nav, section {
+    display: block;
+}
+
+.sutun1 {
+    margin-left: 50px;
+}
+
+.sutun2 {
+    margin-left: 50px;
+}
+
+.sutun3 {
+    margin-left: 480px;
+    margin-top: -338px;
+}
+
+.sutun4 {
+    margin-top: 10px;
+    margin-left: 580px;
+}
+
+.sutun5 {
+    margin-left: 150px;
+    margin-top: 15px;
+}
+
+.sutun6 {
+    margin-left:50px;
+}
+.sutun7 {
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.sutun8 {
+    margin-left: 150px;
+    margin-top: 50px;
+}
+
+.sutun9 {
+    margin-top: -408px;
+    margin-left: 500px;
+}
+
+.sutun10 {
+    margin-top:   50px;
+    margin-left: 428px;
+}
+
+.sutun11 {
+    margin-left: 50px;
+
+}
+
+.sutun12 {
+    margin-left: 70px;
+    margin-top: 10px;
+}
+
+.sutun13 {
+    margin-left: 116px;
+    margin-top: -34px;
+}
+
+.sutun14 {
+   margin-left: 650px;
+   margin-top: -425px;
+}
+
+.sutun15 {
+   margin-left: 50px;
+   margin-top:  30px;
+}
+
+.sutun16 {
+   margin-left: 30px;
+   margin-top:  80px;
+}
+
+.sutun17 {
+    margin-top: 30px;
+}
+
+.sutun18 {
+    margin-top: 10px;
+    margin-left: 500px;
+}
+
+.sutun19 {
+    margin-top: -24px;
+    margin-left: 100px;
+}
+
+.sutun20 {
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.sutun21 {
+    margin-top: -400px;
+    margin-left: 450px;
+}
+
+.sutun22 {
+    margin-top: -24px;
+    margin-left: 100px;
+}
+
+.sutun23 {
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+
+:link {
+     color: #000000; 
+     text-decoration: none;
+     font-weight: 600;
+}
+:visited { 
+    color: #000000;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+    font-weight: bold;
+}
+
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+
+.webgrid-table
+{ 
+    font-family: Arial;
+    font-size: 1.2em;
+    width: 100%;
+    display: table;
+    border-color: white;
+}
+
+.webgrid-table td, th 
+{ 
+    border: 1px solid #e9f3fa;
+    padding: 3px 5px 2px;
+}
+
+.webgrid-header 
+{
+    background-color: #e9f3fa;
+    color: black;
+    padding-bottom: 4px;
+    padding-top: 5px;
+    text-align: center;
+}
+
+.webgridfooter
+{  
+}
+
+.webgrid-row-style
+{
+    padding: 3px 5px 2px;
+    text-align: center;
+}
+
+.webgrid-alternating-row 
+{
+    background-color: #e9f3fa;
+    padding: 3px 5px 2px;
+    text-align: center;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}

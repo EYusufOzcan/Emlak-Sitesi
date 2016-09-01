@@ -1,0 +1,119 @@
+﻿@model StajProje3.Models.AdminEkranı
+
+@{
+    ViewBag.Title = "Detay";
+}
+
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <div class="sutun8">
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.IlanBasligi)
+            @Html.ValidationMessageFor(model => model.IlanBasligi)
+        </div>
+
+        <div class="editor-field">
+             <img src="~/Dosyalar/@Model.Resim" style="width:200px; height:200px;" />
+        </div>
+
+     <div class="editor-label">
+            İl:
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Il, new { @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.Il)
+        </div>
+
+        <div class="editor-label">
+            İlçe:
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Ilce, new { @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.Ilce)
+        </div>
+
+        <div class="editor-label">
+            Semt:
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Semt, new { @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.Semt)
+        </div>
+            </div>
+
+    <div class="sutun9">
+
+         @Html.HiddenFor(model => model.ID)
+
+        <div class="editor-label">
+            Konut Tipi:
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.KonutTipi, new { @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.KonutTipi)
+        </div>
+
+        <div class="editor-label">
+            Konut Şekli:
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.KonutSekli, new { @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.KonutSekli)
+        </div>
+
+        <div class="editor-label">
+            Bina Yaşı: 
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.BinaYasi, new { @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.BinaYasi)
+        </div>
+
+        <div class="editor-label">
+            Oda Sayısı:
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.OdaSayisi, new { @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.OdaSayisi)
+        </div>
+
+        <div class="editor-label">
+            Metrekare:
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.mKare, new { @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.mKare)
+        </div>
+
+        <div class="editor-label">
+            Fiyat:
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Fiyat, new { @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.Fiyat)
+        </div>
+
+        <div class="editor-label">
+            Açıklama:
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Aciklama, new { @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.Aciklama)
+        </div>
+        </div>
+    
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+@using (Html.BeginForm("", "Create", FormMethod.Post))
+{
+    <div class="sutun10">
+    @Html.ActionLink("İletişime Geç", "Contact") || @Html.ActionLink("İlanlara Geri Dön", "List")
+    </div>
+}
+

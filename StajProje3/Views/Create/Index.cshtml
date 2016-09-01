@@ -1,0 +1,48 @@
+﻿@{
+    var grid = new WebGrid(source: Model, canPage: true, rowsPerPage: 10);
+    grid.Pager(WebGridPagerModes.All);
+}
+
+@{
+    ViewBag.Title = "Kayıtlar";
+}
+
+
+<div id="content">
+
+@using (Html.BeginForm("Index","Create", FormMethod.Post))
+{
+
+    <div class="sutun17">
+    @grid.GetHtml(
+    tableStyle:"webgrid-table",
+    headerStyle:"webgrid-header",
+    footerStyle:"webgridfooter",
+    alternatingRowStyle:"webgrid-alternating-row",
+    rowStyle:"webgrid-row-style",
+    columns: grid.Columns(
+    grid.Column(columnName:"IlanBasligi", header: "İlan Başlığı"),
+    grid.Column(columnName:"KonutTipi", header:"Konut Tipi"),
+    grid.Column(columnName:"KonutSekli", header:"Konut Şekli"),
+    grid.Column(columnName:"BinaYasi", header:"Bina Yaşı"),
+    grid.Column(columnName:"OdaSayisi", header:"Oda Sayısı"),
+    grid.Column(columnName:"mKare", header:"Metrekare"),
+    grid.Column(columnName:"Resim", header:"Resim"),
+    grid.Column(columnName:"Il", header:"İl"),
+    grid.Column(columnName:"Ilce", header:"İlçe"),
+    grid.Column(columnName:"Semt", header:"Semt"),
+    grid.Column(columnName:"Fiyat", header:"Fiyat"),
+    grid.Column(columnName:"Aciklama", header:"Açıklama"),
+    grid.Column(format: @<text> @Html.ActionLink("Güncelle", "Edit", new { id = item.ID }) 
+                           @Html.ActionLink("Sil", "Delete", new { id = item.ID })</text>)
+                                                                              
+    ))     
+        </div>          
+}
+
+        <div class="sutun5">
+<div>
+    @Html.ActionLink("İlan Ekle", "Create") || @Html.ActionLink("Çıkış Yap", "List")
+</div>
+    </div>
+</div>

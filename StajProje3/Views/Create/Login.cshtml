@@ -1,0 +1,52 @@
+﻿@model StajProje3.Models.Kullanıcılar
+
+@{
+    ViewBag.Title = "Giriş Ekranı";
+}
+
+<div class="sutun6">
+<h1>Admin Giriş</h1>
+   </div>
+
+<div class="sutun7">
+@using (Html.BeginForm())
+{ 
+    
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    if (@ViewBag.Message != null)
+    { 
+     <div style="border: 1px solid red">
+         @ViewBag.Message
+     </div>
+    
+    }
+    <table>
+        <tr>
+            <td>Kullanıcı Adı: </td>
+            <td>@Html.TextBoxFor(a=>a.KullanıcıAd)</td>
+            <td>@Html.ValidationMessageFor(a=>a.KullanıcıAd)</td>
+        </tr>
+        <tr>
+            <td>Şifre: </td>
+            <td>@Html.Password("Sifre")</td>
+            <td>@Html.ValidationMessageFor(a=>a.Sifre)</td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Giriş" /></td>
+        </tr>
+    </table>
+}   
+    </div>
+
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<div class="sutun22">
+@using (Html.BeginForm("List", "Create"))
+{
+    <input type="submit" value="İptal" />
+}
+    </div>

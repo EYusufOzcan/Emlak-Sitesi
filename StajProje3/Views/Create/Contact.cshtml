@@ -1,0 +1,67 @@
+﻿@model StajProje3.Models.Mesaj
+
+@{
+    ViewBag.Title = "Contact";
+}
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <div class="sutun2">
+        <div class="editor-label">
+            Ad:
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Ad)
+            @Html.ValidationMessageFor(model => model.Ad)
+        </div>
+
+        <div class="editor-label">
+            Soyad:
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Soyad)
+            @Html.ValidationMessageFor(model => model.Soyad)
+        </div>
+
+        <div class="editor-label">
+            Telefon:
+        </div>
+        <div class="editor-field">
+            <input type="number" name="telefon" min="00000000001"  />
+            @Html.ValidationMessageFor(model => model.Telefon)
+        </div>
+
+        <div class="editor-label">
+            Email:
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            Mesaj:
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Mesaj1)
+            @Html.ValidationMessageFor(model => model.Mesaj1)
+        </div>
+        
+        <p>
+            <input type="submit" value="Gönder" />
+        </p>
+        </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+           @using (Html.BeginForm("List","Create")){
+               <div class="sutun13">
+            <input type="submit" value="İptal"/>
+                   </div>
+           }
+

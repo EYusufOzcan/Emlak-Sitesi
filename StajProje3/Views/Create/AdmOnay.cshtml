@@ -1,0 +1,41 @@
+﻿@{
+    var grid = new WebGrid(source: Model, canPage: true, rowsPerPage: 10);
+    grid.Pager(WebGridPagerModes.All);
+}
+
+@{
+    ViewBag.Title = "AdmOnay";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    
+    <div>
+        <br />
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp @Html.ActionLink("Reddedilenler", "AdmRed") || @Html.ActionLink("Onaylananlar", "AdmOnay") || @Html.ActionLink("Onay Bekleyenler", "Show") || @Html.ActionLink("Geri Dön", "Create") || @Html.ActionLink("Çıkış Yap", "List")
+        <br /><br />
+        </div>
+
+    @grid.GetHtml(
+    tableStyle: "webgrid-table",
+    headerStyle: "webgrid-header",
+    footerStyle: "webgridfooter",
+    alternatingRowStyle: "webgrid-alternating-row",
+    rowStyle: "webgrid-row-style",
+    columns: grid.Columns(
+    grid.Column(columnName: "Kullanici", header: "Kullanıcı Adı"),
+    grid.Column(header: "Resim", format: @<img src="~/Dosyalar/@item.Resim" style= "width:100px; height:100px;" />),
+    grid.Column(columnName: "IlanBasligi", header: "İlan Başlığı"),
+    grid.Column(columnName: "KonutTipi", header: "Konut Tipi"),
+    grid.Column(columnName: "KonutSekli", header: "Konut Şekli"),
+    grid.Column(columnName: "BinaYasi", header: "Bina Yaşı"),
+    grid.Column(columnName: "OdaSayisi", header: "Oda Sayısı"),
+    grid.Column(columnName: "mKare", header: "Metrekare"),
+    grid.Column(columnName: "Il", header: "İl"),
+    grid.Column(columnName: "Ilce", header: "İlçe"),
+    grid.Column(columnName: "Semt", header: "Semt"),
+    grid.Column(columnName: "Fiyat", header: "Fiyat"),
+    grid.Column(columnName: "Aciklama", header: "Açıklama")
+    ))   
+}

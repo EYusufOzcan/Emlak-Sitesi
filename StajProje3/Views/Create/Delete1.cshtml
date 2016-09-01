@@ -1,0 +1,14 @@
+﻿@model StajProje3.Models.AdminEkranı
+
+@{
+    ViewBag.Title = "Mesaj Silme";
+}
+
+<h2>Silmek istediğinize emin misiniz?</h2>
+
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Sil" /> |
+        @Html.ActionLink("Mesajlara Geri Dön", "ContactShow")
+    </p>
+}
